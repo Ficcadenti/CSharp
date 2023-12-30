@@ -1,8 +1,12 @@
-﻿public class HelloWorld {
+﻿using System;
 
-   public static void Main()
-   {
-      System.Console.WriteLine("Ciao Mondo!");
-      System.Console.WriteLine("L'ora attuale è : " + DateTime.Now);
+namespace MyClass{
+public class HelloWorld {
+
+      public static void Main()
+      {
+         System.Console.WriteLine("Ciao Mondo!");
+         System.Console.WriteLine("L'ora attuale è : " + DateTime.Now);
+      }
    }
 }
