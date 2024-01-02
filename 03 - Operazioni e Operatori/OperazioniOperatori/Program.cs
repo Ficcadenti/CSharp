@@ -33,6 +33,5 @@ class Program
         string str=Convert.ToString(d);
         Console.WriteLine($"str={str}");
 
-
     }
 }
