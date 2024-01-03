@@ -37,7 +37,20 @@ class Program
         }
 
 
+        //Null
+        string s2="Raffo";
 
-        
+        //si attiva il garbage collector
+        s2=null;
+        Console.WriteLine($"s2=[{s2}]");
+
+        int[] c1=new [] {10,20};
+        int[] c2=c1;
+        c1=null;
+
+        foreach(int v in c2)
+        {
+            Console.WriteLine($"{v}");
+        }
     }
 }
