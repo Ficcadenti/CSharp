@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Specialized;
-using System.Runtime.CompilerServices;
-using System.Xml.Serialization;
 
 namespace Biblioteca
 {
@@ -10,9 +7,9 @@ namespace Biblioteca
         static void Main(string[] args)
         {
             Console.WriteLine("Biblioteca !!!");
-            Utente u=new Utente("id001","Raffaele","Ficcadenti","2024");
-            Utente u1=new Utente("id001","Valeria","Greco","2024");
-            Libro l=new Libro("id01","Sono puri i loro sogni","Matteo Bussola");
+            Utente u=new Utente("U001","Raffaele","Ficcadenti","2024");
+            Utente u1=new Utente("U002","Valeria","Greco","2024");
+            Libro l=new Libro("L001","Sono puri i loro sogni","Matteo Bussola");
             Console.WriteLine($"{u.Denominazione()}");
             Console.WriteLine($"{u1.Denominazione()}");
             Console.WriteLine($"{l.Descrizione()}");
