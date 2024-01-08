@@ -46,6 +46,8 @@ namespace Classi
                 string s=$"Ciao {nome} !!!";
                 Console.WriteLine(s);
             }
+
+            //this
             this.nome=nome;
             this.cognome=cognome;
         }
@@ -55,6 +57,9 @@ namespace Classi
             this.nome=null;
             this.cognome=null;
         }
+
+        public Persona(string cognome):this("Mario",cognome){}
+       
     }
 
     internal class MyClass

@@ -5,8 +5,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- <StartupObject>Classi.Program</StartupObject> -->
-    <StartupObject>Biblioteca.Biblioteca</StartupObject>
   </PropertyGroup>
 
 </Project>
