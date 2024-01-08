@@ -13,5 +13,8 @@ https://www.html.it/guide/guida-c1/
 dotnet new console -o CiaoMondo
 dotnet new console -o CiaoMondo --use-program-main
 
+### W3C
+https://www.w3schools.com/cs/index.php
+
 ### Link interessanti
 https://it.wikipedia.org/wiki/IEEE_754
