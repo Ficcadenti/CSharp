@@ -10,8 +10,8 @@ namespace Biblioteca
             Utente u=new Utente(){Id="001",Nome="Raffaele",Cognome="Ficcadenti",AnnoIscrizione="2024"};
             Utente u1=new Utente(){Id="002",Nome="Valeria",Cognome="Greco",AnnoIscrizione="2023"};
             Libro l=new Libro(){Id="L001",Titolo="Sono puri i loro sogni",Autore="Matteo Bussola"};
-            Console.WriteLine($"{u.Denominazione}");
-            Console.WriteLine($"{u1.Denominazione}");
+            Console.WriteLine($"{((Persona)u).Denominazione}");
+            Console.WriteLine($"{((Persona)u1).Denominazione}");
             Console.WriteLine($"{l.Descrizione}");
             l.Prestito(u);
             l.Prestito(u1);
@@ -39,6 +39,13 @@ namespace Biblioteca
         public string? Id{get;set;}
        
         public string? AnnoIscrizione{get;set;}
+
+        public new string Denominazione
+        {
+            get{
+                return $"{Id}  {base.Denominazione} {AnnoIscrizione}";
+            }
+        }
 
     }
 
