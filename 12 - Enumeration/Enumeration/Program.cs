@@ -3,7 +3,10 @@ using System.Xml;
 
 namespace Enumeration
 {
-    enum PuntoCardinale {nord,sud,est,oves};
+    enum PuntoCardinale:short {nord,sud,est,ovest};
+    enum Esito {OK=1,KO=0};
+
+    enum HttpError {OK=200,FORBIDDEN=403, INTERNAL_ERROR};
     class Program
     {
         static void Main(string[] args)
@@ -16,6 +19,12 @@ namespace Enumeration
             {
                 Console.WriteLine("Sei puntato ad est, dove sorge il sole... !!!");
             }
+
+            Console.WriteLine((short)PuntoCardinale.ovest);
+            Console.WriteLine(Esito.OK);
+            Console.WriteLine((int)Esito.OK);
+            Console.WriteLine((int)HttpError.FORBIDDEN);
+            Console.WriteLine((int)HttpError.INTERNAL_ERROR);
         }
     }
 }
