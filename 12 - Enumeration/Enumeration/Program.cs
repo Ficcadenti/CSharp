@@ -1,9 +1,21 @@
-﻿namespace Enumeration;
+﻿using System;
+using System.Xml;
 
-class Program
+namespace Enumeration
 {
-    static void Main(string[] args)
+    enum PuntoCardinale {nord,sud,est,oves};
+    class Program
     {
-        Console.WriteLine("Hello, World!");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enumeratione !!!");
+            PuntoCardinale direzione=PuntoCardinale.est;
+            Console.WriteLine(direzione);
+
+            if(direzione==PuntoCardinale.est)
+            {
+                Console.WriteLine("Sei puntato ad est, dove sorge il sole... !!!");
+            }
+        }
     }
 }
