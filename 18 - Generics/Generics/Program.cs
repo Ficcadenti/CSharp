@@ -42,10 +42,19 @@ namespace Generics{
             bool? myBool=null;
             Console.WriteLine(myBool);
             Console.WriteLine(myBool.HasValue);
+            if(myBool.HasValue)
+                Console.WriteLine(myBool.Value);
 
-            Nullable<bool> myBool2=true;
+            Nullable<bool> myBool2=false;
             Console.WriteLine(myBool2);
             Console.WriteLine(myBool2.HasValue);
+            if(myBool2.HasValue)
+                Console.WriteLine(myBool2.Value);
+
+
+             Nullable<bool> myBool3=null;
+             bool bb=myBool3 ?? true;
+             Console.WriteLine(bb);
 
             
             
