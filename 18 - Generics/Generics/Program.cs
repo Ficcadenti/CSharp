@@ -21,8 +21,10 @@ namespace Generics{
             Console.WriteLine($"pos={pos} {listaStr.Valore(pos)}");
 
             MyGenClass<int> gen=new MyGenClass<int>();
-
             gen.Stampa();
+
+            MyGenClassVincolata<A> myGenClassVincolata=new MyGenClassVincolata<A>();
+            myGenClassVincolata.Stampa();
 
         }
 
@@ -67,6 +69,15 @@ namespace Generics{
         }
 
         //valori predefiniti
+        public class A{
+            public int Numero{get;set;}
+
+            public A()
+            {
+                Numero=-1;
+            }
+        }
+
         public class MyGenClass<T>
         {
             private T element;
@@ -82,5 +93,25 @@ namespace Generics{
             }
         }
 
+        //type constraint
+        public class MyGenClassVincolata<T> where T:A,new()
+        {
+            private T? element;
+
+            public MyGenClassVincolata()
+            {
+                element=new T();
+            }
+
+            public void Stampa()
+            {
+                if(element!=null)
+                {
+                    Console.WriteLine($"element.Numero={element.Numero}");
+                }else{
+                    Console.WriteLine("NULLLLLLL");
+                }
+            }
+        }
     }
 }
