@@ -7,6 +7,9 @@ namespace Enumeration
     enum Esito {OK=1,KO=0};
 
     enum HttpError {OK=200,FORBIDDEN=403, INTERNAL_ERROR};
+
+    public enum GiorniSettimanaEnum {Lunedi,Martedi,Mercoledi,Giovedi,Venerdi,Sabato,Domenica}
+
     class Program
     {
         static void Main(string[] args)
@@ -25,6 +28,9 @@ namespace Enumeration
             Console.WriteLine((int)Esito.OK);
             Console.WriteLine((int)HttpError.FORBIDDEN);
             Console.WriteLine((int)HttpError.INTERNAL_ERROR);
+
+            foreach(int i in Enum.GetValues(typeof(GiorniSettimanaEnum)))
+                Console.WriteLine(i);
         }
     }
 }

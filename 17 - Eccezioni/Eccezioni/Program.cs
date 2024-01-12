@@ -24,6 +24,19 @@
                 Console.WriteLine("Parte di codice sempre eseguita");
             }
 
+            try
+            {
+                sollevaEccezione(); 
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        static void sollevaEccezione()
+        {
+            throw new Exception("Mia eccezione !!!");
         }
     }
 }
