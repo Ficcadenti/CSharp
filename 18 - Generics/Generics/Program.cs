@@ -26,6 +26,30 @@ namespace Generics{
             MyGenClassVincolata<A> myGenClassVincolata=new MyGenClassVincolata<A>();
             myGenClassVincolata.Stampa();
 
+
+            MyClassA<int> a=new MyClassA<int>();
+            Console.WriteLine(a.m(10));
+
+            MyClassB b=new MyClassB();
+            Console.WriteLine(b.m("Valeria !!!!"));
+
+            MyStruct<double> ms;
+            ms.a=3.14159;
+
+            Console.WriteLine($"ms.a={ms.a} is {ms.a.GetType()}");
+
+            //tipi Nullable in forma breve
+            bool? myBool=null;
+            Console.WriteLine(myBool);
+            Console.WriteLine(myBool.HasValue);
+
+            Nullable<bool> myBool2=true;
+            Console.WriteLine(myBool2);
+            Console.WriteLine(myBool2.HasValue);
+
+            
+            
+
         }
 
         //metodi generici
@@ -78,9 +102,10 @@ namespace Generics{
             }
         }
 
+        //classe generica con default value
         public class MyGenClass<T>
         {
-            private T element;
+            private T? element;
 
             public MyGenClass()
             {
@@ -113,5 +138,34 @@ namespace Generics{
                 }
             }
         }
+
+        //interfaccia generica
+        public interface IMyInterface<T>
+        {
+            T m(T x);
+        }
+
+        public class MyClassA<T>: IMyInterface<T>
+        {
+            public T m(T x)
+            {
+                return  x;
+            }
+        }
+
+        public class MyClassB: IMyInterface<string>
+        {
+            public string m(string x)
+            {
+                return  x;
+            }
+        }
+
+        //struct generica
+        struct MyStruct<T> where T: struct
+        {
+            public T a;
+        }
+
     }
 }
