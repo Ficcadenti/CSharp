@@ -16,5 +16,8 @@ dotnet new console -o CiaoMondo --use-program-main
 ### W3C
 https://www.w3schools.com/cs/index.php
 
+### LINQ
+https://learn.microsoft.com/it-it/dotnet/standard/linq/
+
 ### Link interessanti
 https://it.wikipedia.org/wiki/IEEE_754
