@@ -14,6 +14,8 @@
             Console.WriteLine($"c.x={c.x}");
             MyMethod(c);
             Console.WriteLine($"c.x={c.x}");
+            MyMethod1(c);
+            Console.WriteLine($"c.x={c.x}");
 
 
         }
@@ -26,6 +28,13 @@
         {
             c.x=20;
         }
+
+        static void MyMethod1(MyClass c)
+        {
+            c=new MyClass();
+            c.x=2000;
+        }
+
 
         public class MyClass
         {
