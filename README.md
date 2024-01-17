@@ -9,15 +9,24 @@ https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/install
 ### HTML.it 
 https://www.html.it/guide/guida-c1/ 
 
-### Conmandi utili
-dotnet new console -o CiaoMondo
-dotnet new console -o CiaoMondo --use-program-main
-
 ### W3C
 https://www.w3schools.com/cs/index.php
 
 ### LINQ
 https://learn.microsoft.com/it-it/dotnet/standard/linq/
 
+### API-Rest
+https://www.youtube.com/watch?v=EQsUNRZf1FA&ab_channel=Developpare
+
 ### Link interessanti
 https://it.wikipedia.org/wiki/IEEE_754
+https://zetcode.com/csharp/sqlite/
+https://www.nuget.org/packages/System.Linq/
+https://stackoverflow.com/questions/44074121/build-net-core-console-application-to-output-an-exe
+
+### Conmandi utili
+dotnet new console -o CiaoMondo
+dotnet new console -o CiaoMondo --use-program-main
+dotnet list package
+dotnet add package <nome pacchetto>
+dotnet publish -c Release -r win10-x64

@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int n=2000;
+        int n=20000;
         Console.WriteLine("Fattoriale per grandi numeri!!!");
         Console.WriteLine($"{n}!={Fattoriale(n)}");
     }
