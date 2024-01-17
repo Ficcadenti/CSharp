@@ -1,9 +1,10 @@
-﻿namespace Lambda;
+﻿namespace Fattoriale;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Lambda expressions !!!");
+        Console.WriteLine("Lambda expression !!!");
     }
+
 }
