@@ -25,8 +25,8 @@ https://www.nuget.org/packages/System.Linq/
 https://stackoverflow.com/questions/44074121/build-net-core-console-application-to-output-an-exe
 
 ### Conmandi utili
-dotnet new console -o CiaoMondo
-dotnet new console -o CiaoMondo --use-program-main
-dotnet list package
-dotnet add package <nome pacchetto>
-dotnet publish -c Release -r win10-x64
+dotnet new console -o CiaoMondo<\br>
+dotnet new console -o CiaoMondo --use-program-main<\br>
+dotnet list package<\br>
+dotnet add package <nome pacchetto><\br>
+dotnet publish -c Release -r win10-x64<\br>
