@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Tls;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace CiaoMondo.Controllers
 {
@@ -15,26 +13,30 @@ namespace CiaoMondo.Controllers
         public string? pwd {get;set;}
     }
 
+    public record Request
+    {
+        [Required]
+        public string? ip {get;set;}
+        [Required]
+        public string? uid {get;set;}
+        [Required]
+        public string? pwd {get;set;}
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class CiaoMondoController : ControllerBase
     {
-        [HttpGet("ciao/{ip}/{uid}/{pwd}")]
-        public IActionResult Ciao(string ip,string uid,string pwd)
+        [HttpPost]
+        //[Route("ciao/{ip}/{uid}/{pwd}")]
+        [Route("ciao")]
+        //public IActionResult Ciao([FromBody]Request request,string ip,string uid,string pwd)
+        public IActionResult Ciao([FromBody]Request request)
         {
-            MySqlConnection con;
-            MySqlDataReader reader;
-
-            string server =  ip;
-            //.Replace('_','.');
             string database = "interopmaker";
-            string username = uid;
-            string password = pwd;
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            string connectionString = "SERVER=" + request.ip + ";" + "DATABASE=" + database + ";" + "UID=" + request.uid + ";" + "PASSWORD=" + request.pwd + ";";
 
-            con = new MySqlConnection(connectionString);
+            MySqlConnection con = new MySqlConnection(connectionString);
 
             try
             {
@@ -42,7 +44,8 @@ namespace CiaoMondo.Controllers
 
                 string query = "SELECT SYSDATE()";
                 MySqlCommand cmd = new MySqlCommand(query, con);
-                reader = cmd.ExecuteReader(); 
+                MySqlDataReader reader = cmd.ExecuteReader(); 
+
                 try
                 {
                     StringBuilder stringBuilder = new StringBuilder();
@@ -52,7 +55,7 @@ namespace CiaoMondo.Controllers
                     }
                     con.Close();
 
-                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString(), ip=ip, uid=uid, pwd=pwd});
+                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString(), ip=request.ip, uid=request.uid, pwd=request.pwd});
                 }
                 finally
                 {
@@ -68,15 +71,10 @@ namespace CiaoMondo.Controllers
                 {
                     case 0:
                         return StatusCode(StatusCodes.Status500InternalServerError, "Cannot connect to server.  Contact administrator");
-
-
                     case 1045:
                         return StatusCode(StatusCodes.Status500InternalServerError, "Invalid username/password, please try again");
- 
-
                     default:
                         return StatusCode(StatusCodes.Status500InternalServerError, "Internal Error");
- 
                 }
             }
 
