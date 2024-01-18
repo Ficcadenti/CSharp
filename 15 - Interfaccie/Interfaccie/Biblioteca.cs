@@ -32,7 +32,7 @@ namespace Biblioteca
             {
                 foreach(IUtente utente in utenti)
                 {
-                    Console.WriteLine(utente.Denominazione);
+                    Console.WriteLine(utente.MyMethod2(utente.Denominazione));
                 }
             }
         }
@@ -41,17 +41,16 @@ namespace Biblioteca
     public interface IUtente
     {
         string? Id{get;set;}
-       
         string? AnnoIscrizione{get;set;}
-
         string? Denominazione{get;}
+        //default method
+        string MyMethod2(string value) => value.ToUpper();
     }
 
     public class Persona: IUtente
     {
         public string? Nome{get;set;}
         public string? Cognome{get;set;}  
-
         public string? Id{get;set;}       
         public string? AnnoIscrizione{get;set;}
         public string Denominazione{

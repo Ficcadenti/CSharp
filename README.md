@@ -23,6 +23,8 @@ https://it.wikipedia.org/wiki/IEEE_754
 https://zetcode.com/csharp/sqlite/
 https://www.nuget.org/packages/System.Linq/
 https://stackoverflow.com/questions/44074121/build-net-core-console-application-to-output-an-exe
+https://www.c-sharpcorner.com/article/stack-heap-value-type-and-reference-type-in-c-sharp/
+https://www.bytehide.com/blog/abstract-class-vs-interface-csharp
 
 ### Conmandi utili
 <pre>
