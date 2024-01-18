@@ -1,0 +1,11 @@
+@CiaoMondo_HostAddress = https://localhost:7163
+
+GET {{CiaoMondo_HostAddress}}/api/CiaoMondo/ciao
+Accept: application/json
+
+###
+
+GET {{CiaoMondo_HostAddress}}/api/CiaoMondo/arrivederci
+Accept: application/json
+
+###

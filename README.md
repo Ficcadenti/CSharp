@@ -6,6 +6,9 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.100-windows
 ### Hello World
 https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/install
 
+### Documentazione
+https://learn.microsoft.com/it-it/dotnet/fundamentals/
+
 ### HTML.it 
 https://www.html.it/guide/guida-c1/ 
 
@@ -15,8 +18,8 @@ https://www.w3schools.com/cs/index.php
 ### LINQ
 https://learn.microsoft.com/it-it/dotnet/standard/linq/
 
-### API-Rest
-https://www.youtube.com/watch?v=EQsUNRZf1FA&ab_channel=Developpare
+### NuGet
+https://www.nuget.org/packages/
 
 ### Link interessanti
 https://it.wikipedia.org/wiki/IEEE_754
@@ -30,6 +33,8 @@ https://stackoverflow.com/questions/44074121/build-net-core-console-application-
 https://www.c-sharpcorner.com/article/stack-heap-value-type-and-reference-type-in-c-sharp/
 
 https://www.bytehide.com/blog/abstract-class-vs-interface-csharp
+
+https://www.youtube.com/watch?v=EQsUNRZf1FA&ab_channel=Developpare
 
 
 ### Conmandi utili
