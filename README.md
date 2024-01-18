@@ -53,5 +53,5 @@ dotnet new console -o CiaoMondo --use-program-main</br>
 dotnet list package</br>
 dotnet add package <nome pacchetto></br>
 dotnet publish -c Release -r win10-x64</br>
- otnet run --launch-profile <nome_profilo></br>
+dotnet run --launch-profile <nome_profilo></br>
 </pre>
