@@ -51,7 +51,7 @@ https://www.youtube.com/watch?v=EQsUNRZf1FA&ab_channel=Developpare
 dotnet new console -o CiaoMondo</br>
 dotnet new console -o CiaoMondo --use-program-main</br>
 dotnet list package</br>
-dotnet add package <nome pacchetto></br>
+dotnet add package NOME_PACCHETTO</br>
 dotnet publish -c Release -r win10-x64</br>
-dotnet run --launch-profile <nome_profilo></br>
+dotnet run --launch-profile NOME_PROFILO</br>
 </pre>
