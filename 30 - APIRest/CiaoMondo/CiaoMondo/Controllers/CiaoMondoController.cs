@@ -10,19 +10,23 @@ namespace CiaoMondo.Controllers
     public record Response
     {
         public string? sysdate {get;set;}
+        public string? ip {get;set;}
+        public string? uid {get;set;}
+        public string? pwd {get;set;}
     }
 
     [Route("api/[controller]")]
     [ApiController]
     public class CiaoMondoController : ControllerBase
     {
-        [HttpGet("ciao/{uid}/{pwd}")]
-        public IActionResult Ciao(string uid,string pwd)
+        [HttpGet("ciao/{ip}/{uid}/{pwd}")]
+        public IActionResult Ciao(string ip,string uid,string pwd)
         {
             MySqlConnection con;
             MySqlDataReader reader;
 
-            string server = "192.168.100.30";
+            string server =  ip;
+            //.Replace('_','.');
             string database = "interopmaker";
             string username = uid;
             string password = pwd;
@@ -48,7 +52,7 @@ namespace CiaoMondo.Controllers
                     }
                     con.Close();
 
-                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString()});
+                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString(), ip=ip, uid=uid, pwd=pwd});
                 }
                 finally
                 {
