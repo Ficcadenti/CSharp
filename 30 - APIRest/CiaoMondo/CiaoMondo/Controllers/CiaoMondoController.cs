@@ -1,24 +1,31 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace CiaoMondo.Controllers
 {
+    public record Response
+    {
+        public string? sysdate {get;set;}
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class CiaoMondoController : ControllerBase
     {
-        [HttpGet("ciao")]
-        public IActionResult Ciao()
+        [HttpGet("ciao/{uid}/{pwd}")]
+        public IActionResult Ciao(string uid,string pwd)
         {
             MySqlConnection con;
             MySqlDataReader reader;
 
-            string server = "xxx.xxx.xxx.xxx";
+            string server = "192.168.100.30";
             string database = "interopmaker";
-            string uid = "uid";
-            string password = "password";
+            string username = uid;
+            string password = pwd;
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -28,6 +35,7 @@ namespace CiaoMondo.Controllers
             try
             {
                 con.Open();
+
                 string query = "SELECT SYSDATE()";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 reader = cmd.ExecuteReader(); 
@@ -40,11 +48,11 @@ namespace CiaoMondo.Controllers
                     }
                     con.Close();
 
-                    return StatusCode(StatusCodes.Status200OK, stringBuilder.ToString());
+                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString()});
                 }
                 finally
                 {
-                    Console.WriteLine("Yolo");
+                    Console.WriteLine("");
                     con.Close();
                 }
                 

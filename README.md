@@ -3,23 +3,32 @@
 #### Instalazione .NET
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.100-windows-x64-installer
 
+
 ### Hello World
 https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/install
+
 
 ### Documentazione
 https://learn.microsoft.com/it-it/dotnet/fundamentals/
 
+
 ### HTML.it 
 https://www.html.it/guide/guida-c1/ 
+
 
 ### W3C
 https://www.w3schools.com/cs/index.php
 
+
 ### LINQ
 https://learn.microsoft.com/it-it/dotnet/standard/linq/
 
+https://www.html.it/articoli/introduzione-a-linq/
+
+
 ### NuGet
 https://www.nuget.org/packages/
+
 
 ### Link interessanti
 https://it.wikipedia.org/wiki/IEEE_754
@@ -44,4 +53,5 @@ dotnet new console -o CiaoMondo --use-program-main</br>
 dotnet list package</br>
 dotnet add package <nome pacchetto></br>
 dotnet publish -c Release -r win10-x64</br>
+ otnet run --launch-profile <nome_profilo></br>
 </pre>
