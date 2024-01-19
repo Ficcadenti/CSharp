@@ -27,13 +27,15 @@ namespace CiaoMondo.Controllers
     [ApiController]
     public class CiaoMondoController : ControllerBase
     {
+        private const string INTEROPMAKER = "interopmaker";
+
         [HttpPost]
         //[Route("ciao/{ip}/{uid}/{pwd}")]
         [Route("ciao")]
         //public IActionResult Ciao([FromBody]Request request,string ip,string uid,string pwd)
         public IActionResult Ciao([FromBody]Request request)
         {
-            string database = "interopmaker";
+            string database = INTEROPMAKER;
             string connectionString = "SERVER=" + request.ip + ";" + "DATABASE=" + database + ";" + "UID=" + request.uid + ";" + "PASSWORD=" + request.pwd + ";";
 
             MySqlConnection con = new MySqlConnection(connectionString);
@@ -45,25 +47,15 @@ namespace CiaoMondo.Controllers
                 string query = "SELECT SYSDATE()";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataReader reader = cmd.ExecuteReader(); 
+                StringBuilder stringBuilder = new StringBuilder();
 
-                try
+                while (reader.Read())
                 {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while (reader.Read())
-                    {
-                        stringBuilder.Append(reader.GetDateTime(0));
-                    }
-                    con.Close();
+                    stringBuilder.Append(reader.GetDateTime(0));
+                }
+                con.Close();
 
-                    return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString(), ip=request.ip, uid=request.uid, pwd=request.pwd});
-                }
-                finally
-                {
-                    Console.WriteLine("");
-                    con.Close();
-                }
-                
-                
+                return StatusCode(StatusCodes.Status200OK, new Response{sysdate=stringBuilder.ToString(), ip=request.ip, uid=request.uid, pwd=request.pwd});
             }
             catch (MySqlException ex)
             {

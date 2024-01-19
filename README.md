@@ -26,6 +26,10 @@ https://learn.microsoft.com/it-it/dotnet/standard/linq/
 https://www.html.it/articoli/introduzione-a-linq/
 
 
+### Collection
+https://www.mrw.it/net/collections-c_7600.html
+
+
 ### NuGet
 https://www.nuget.org/packages/
 
