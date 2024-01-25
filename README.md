@@ -58,4 +58,5 @@ dotnet list package</br>
 dotnet add package NOME_PACCHETTO</br>
 dotnet publish -c Release -r win10-x64</br>
 dotnet run --launch-profile NOME_PROFILO</br>
+dotnet --list-sdks</br>
 </pre>

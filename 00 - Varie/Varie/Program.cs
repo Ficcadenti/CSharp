@@ -5,8 +5,33 @@ class Program
     static void Main(string[] args)
     {
         int n=20000;
-        Console.WriteLine("Fattoriale per grandi numeri!!!");
+        Console.WriteLine("Fattoriale per grandi numeri !!!");
         Console.WriteLine($"{n}!={Fattoriale(n)}");
+
+
+        Console.WriteLine("Duplicati in array !!!");
+        int Min = 1,Max = 10;
+        int[] test = new int[10];
+        
+        for (int i = 0; i < test.Length; i++)
+        {
+            test[i] = GetRandomInt(Min, Max);
+        }
+
+        StampaArray(test);
+
+        var dict = new Dictionary<int, int>();
+
+        foreach(var t in test)
+        {
+            dict.TryGetValue(t, out int count);
+            dict[t] = count + 1;
+        }
+        
+        foreach(var v in dict)
+        {
+            Console.WriteLine($"Il umero {v.Key} è presente {v.Value} volte.");
+        }
     }
 
 
@@ -49,4 +74,18 @@ class Program
 
         return string.IsNullOrEmpty(resultStr) ? "0" : resultStr;
     }
+
+    static int GetRandomInt(int minVal, int maxVal)
+        {
+            return new Random().Next(minVal, maxVal);
+        }
+
+        static void StampaArray(int[] arr)
+        {
+            foreach (int n in arr)
+            {
+                Console.Write($"{n} ");
+            }
+            Console.WriteLine();
+        }
 }
