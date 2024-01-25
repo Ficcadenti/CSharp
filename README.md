@@ -50,10 +50,19 @@ https://www.bytehide.com/blog/abstract-class-vs-interface-csharp
 https://www.youtube.com/watch?v=EQsUNRZf1FA&ab_channel=Developpare
 
 
+### SQL
+https://www.sqlservertutorial.net/sql-server-basics/
+
+https://www.codeproject.com/Articles/34372/Top-10-steps-to-optimize-data-access-in-SQL-Server
+
+https://www.freecodecamp.org/italian/news/group-by-in-sql-un-tutorial-con-esempi-di-clausole-count-sum-average-e-having/
+
+
 ### Conmandi utili
 <pre>
 dotnet new console -o CiaoMondo</br>
 dotnet new console -o CiaoMondo --use-program-main</br>
+dotnet new console -o CiaoMondo --use-program-main -f net8.0</br>
 dotnet list package</br>
 dotnet add package NOME_PACCHETTO</br>
 dotnet publish -c Release -r win10-x64</br>
